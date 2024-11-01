@@ -7,6 +7,11 @@ router
   .post(userController.createUsers)
   .get(userController.getAllUsers);
 
+router
+  .route("/users/:id")
+  .delete(userController.deleteUserById)
+  .put(userController.updateUserById);
+
 router.route("/users/length").get(userController.getTotalLength);
 
 module.exports = router;
